@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GSS VP Students — Responsibilities & Plans</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal-50: #E1F5EE;
+    --teal-100: #9FE1CB;
+    --teal-400: #1D9E75;
+    --teal-600: #0F6E56;
+    --teal-800: #085041;
+    --teal-900: #04342C;
+    --gray-50: #F7F6F2;
+    --gray-100: #ECEAE3;
+    --gray-200: #D3D1C7;
+    --gray-600: #5F5E5A;
+    --gray-800: #2C2C2A;
+    --amber-50: #FAEEDA;
+    --amber-400: #BA7517;
+    --amber-800: #412402;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--gray-50);
+    color: var(--gray-800);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--teal-900);
+    color: white;
+    padding: 3rem 2rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 30%;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .header-label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal-100);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  header h1 em {
+    font-style: italic;
+    color: var(--teal-100);
+  }
+
+  header p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.65);
+    max-width: 520px;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* TABS */
+  .tabs-wrap {
+    background: var(--teal-800);
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .tabs {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 2rem;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+
+  .tab {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.55);
+    padding: 1rem 1.25rem;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .tab:hover { color: rgba(255,255,255,0.85); }
+  .tab.active {
+    color: white;
+    border-bottom-color: var(--teal-100);
+  }
+
+  /* CONTENT */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 4rem;
+  }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* SECTION HEADINGS */
+  .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal-400);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem;
+    color: var(--teal-900);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .section-lead {
+    font-size: 15px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    max-width: 620px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  /* ROLE CARDS */
+  .roles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .role-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--gray-100);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .role-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--teal-400);
+  }
+
+  .role-card.amber::before { background: var(--amber-400); }
+
+  .role-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: var(--teal-50);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    margin-bottom: 1rem;
+  }
+
+  .role-card.amber .role-icon { background: var(--amber-50); }
+
+  .role-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--teal-900);
+    margin-bottom: 0.4rem;
+  }
+
+  .role-card .role-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--teal-400);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .role-card.amber .role-title { color: var(--amber-400); }
+
+  .role-card p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .role-email {
+    margin-top: 0.75rem;
+    font-size: 13px;
+    color: var(--teal-600);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* COMMITTEES SECTION */
+  .committees-list {
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .committee-item {
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem;
+    align-items: start;
+  }
+
+  .committee-item h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--teal-900);
+    margin-bottom: 0.3rem;
+  }
+
+  .committee-item p {
+    font-size: 13px;
+    color: var(--gray-600);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .committee-badge {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--teal-800);
+    background: var(--teal-50);
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  /* EVENTS */
+  .events-info {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--gray-100);
+    margin-bottom: 1.5rem;
+  }
+
+  .events-info h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--teal-900);
+    margin-bottom: 0.75rem;
+  }
+
+  .events-info p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
+
+  .events-info a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--teal-600);
+    text-decoration: none;
+    padding: 0.6rem 1.25rem;
+    border: 1.5px solid var(--teal-400);
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .events-info a:hover {
+    background: var(--teal-50);
+  }
+
+  .event-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .event-type {
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .event-type .emoji { font-size: 1.75rem; margin-bottom: 0.5rem; }
+  .event-type h4 { font-size: 14px; font-weight: 600; color: var(--teal-900); margin-bottom: 0.25rem; }
+  .event-type p { font-size: 12px; color: var(--gray-600); line-height: 1.5; font-weight: 300; }
+
+  /* AOs */
+  .ao-intro {
+    background: white;
+    border-radius: 12px;
+    padding: 1.75rem;
+    border: 1px solid var(--gray-100);
+    margin-bottom: 2rem;
+  }
+
+  .ao-intro h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--teal-900);
+    margin-bottom: 0.6rem;
+  }
+
+  .ao-intro p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+  }
+
+  .ao-benefits {
+    display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem;
+  }
+
+  .ao-benefit {
+    background: var(--teal-50);
+    color: var(--teal-800);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 20px;
+  }
+
+  .ao-category {
+    margin-bottom: 2rem;
+  }
+
+  .ao-category-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal-400);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .ao-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .ao-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--gray-800);
+    padding: 0.6rem 0.9rem;
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: 8px;
+    text-decoration: none;
+    gap: 8px;
+    transition: border-color 0.15s;
+  }
+  .ao-item:hover { border-color: var(--teal-400); }
+  .ao-item span { font-size: 11px; color: var(--teal-400); }
+
+  .ao-steps {
+    background: var(--teal-900);
+    border-radius: 12px;
+    padding: 1.75rem;
+    color: white;
+    margin-top: 2rem;
+  }
+
+  .ao-steps h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 1.25rem;
+    color: var(--teal-100);
+  }
+
+  .step-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--teal-400);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .step-row p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .step-row strong {
+    color: white;
+    font-weight: 500;
+  }
+
+  /* STAFF */
+  .staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .staff-card {
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .staff-avatar {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: var(--teal-50);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    color: var(--teal-800);
+    margin-bottom: 1rem;
+  }
+
+  .staff-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--teal-900);
+    margin-bottom: 2px;
+  }
+
+  .staff-card .staff-role {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--teal-400);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+
+  .staff-card p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+  }
+
+  .staff-hours {
+    background: var(--gray-50);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 12px;
+    color: var(--gray-600);
+    line-height: 1.6;
+  }
+
+  .staff-hours strong {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray-600);
+    margin-bottom: 4px;
+  }
+
+  .staff-email {
+    margin-top: 0.75rem;
+    font-size: 13px;
+  }
+  .staff-email a {
+    color: var(--teal-600);
+    text-decoration: none;
+  }
+  .staff-email a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer {
+    background: var(--teal-900);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 12px;
+  }
+
+  footer a { color: var(--teal-100); text-decoration: none; }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--gray-100);
+    margin: 2.5rem 0;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="header-label">UBC Graduate Student Society</p>
+    <h1>VP Students<br><em>Responsibilities & Plans</em></h1>
+    <p>A guide to the roles, responsibilities, events, affiliated organizations, and staff within the GSS VP Students portfolio.</p>
+  </div>
+</header>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('roles', this)">Roles & Responsibilities</button>
+    <button class="tab" onclick="showTab('events', this)">Events</button>
+    <button class="tab" onclick="showTab('aos', this)">Affiliated Organizations</button>
+    <button class="tab" onclick="showTab('staff', this)">GSS Executive & Staff</button>
+  </div>
+</div>
+
+<main>
+
+  <!-- ROLES PANEL -->
+  <div class="panel active" id="panel-roles">
+    <p class="section-eyebrow">About the role</p>
+    <h2 class="section-title">VP Students</h2>
+    <p class="section-lead">The VP Students manages graduate student programs and services, including budgeting, social events, advocacy, and collaborations with Affiliate Organizations and partners.</p>
+
+    <div class="roles-grid">
+      <div class="role-card">
+        <div class="role-icon">🎉</div>
+        <div class="role-title">Social Events</div>
+        <h3>Community & Events</h3>
+        <p>Plans and organizes social events, programs, workshops, and classes for graduate students across UBC, as well as networking opportunities with the broader grad community.</p>
+      </div>
+      <div class="role-card">
+        <div class="role-icon">🤝</div>
+        <div class="role-title">Partnerships</div>
+        <h3>Affiliate Organizations</h3>
+        <p>Manages relationships with GSS Affiliate Organizations (AOs), coordinates funding applications, event promotion through GSS channels, and collaborative opportunities.</p>
+      </div>
+      <div class="role-card">
+        <div class="role-icon">📋</div>
+        <div class="role-title">Administration</div>
+        <h3>Programs & Services</h3>
+        <p>Oversees budgeting and delivery of graduate student programs and services, including the AO funding pool of $1,000 per organization per academic year.</p>
+      </div>
+      <div class="role-card amber">
+        <div class="role-icon amber">📣</div>
+        <div class="role-title">Advocacy</div>
+        <h3>Student Advocacy</h3>
+        <p>Advocates for graduate student interests and ensures graduate student voices are represented in planning events and programs that serve the wider community.</p>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <p class="section-eyebrow">GSS Committees</p>
+    <h2 class="section-title">Committee Involvement</h2>
+    <p class="section-lead">The VP Students works alongside the following GSS committees, each of which is open to all UBC graduate students.</p>
+
+    <div class="committees-list">
+      <div class="committee-item">
+        <div>
+          <h4>Elections & Engagement Committee</h4>
+          <p>Manages the Society's referendums and annual elections, plans social events, programs, workshops, classes, and networking opportunities for grad students.</p>
+        </div>
+        <span class="committee-badge">Biweekly / Monthly</span>
+      </div>
+      <div class="committee-item">
+        <div>
+          <h4>Academic & External Affairs Committee</h4>
+          <p>Lobbies important academic and personal issues to the University and externally, and conducts research such as the annual GSS Student Satisfaction Survey.</p>
+        </div>
+        <span class="committee-badge">Bi-monthly</span>
+      </div>
+      <div class="committee-item">
+        <div>
+          <h4>House Finance Committee</h4>
+          <p>Directs and manages the financial wellbeing of the Society and oversees the use of facilities at the Graduate Student Centre at Thea Koerner House.</p>
+        </div>
+        <span class="committee-badge">Biweekly</span>
+      </div>
+      <div class="committee-item">
+        <div>
+          <h4>Human Resources Committee</h4>
+          <p>Ensures the Society is staffed with a strong team, monitors staffing needs, and oversees staff recruitment and performance evaluations.</p>
+        </div>
+        <span class="committee-badge">Bimonthly</span>
+      </div>
+      <div class="committee-item">
+        <div>
+          <h4>Governance & Accountability Committee</h4>
+          <p>Engages in strategic planning, reviews the governance structure of the Society, and oversees the performance of all other committees.</p>
+        </div>
+        <span class="committee-badge">Bimonthly</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENTS PANEL -->
+  <div class="panel" id="panel-events">
+    <p class="section-eyebrow">What we do</p>
+    <h2 class="section-title">Events & Programs</h2>
+    <p class="section-lead">The GSS organizes a host of events, classes, and opportunities year-round to connect grad students across campus. Events take place at Thea Koerner House Graduate Student Centre, the GSS Loft, and other on-campus locations.</p>
+
+    <div class="event-types">
+      <div class="event-type">
+        <div class="emoji">🎊</div>
+        <h4>Social Events</h4>
+        <p>Games nights, mixers, seasonal celebrations, and community gatherings for grad students.</p>
+      </div>
+      <div class="event-type">
+        <div class="emoji">🏛️</div>
+        <h4>Academic</div>
+        <p>Speaker panels, workshops, and professional development programs.</p>
+      </div>
+      <div class="event-type">
+        <div class="emoji">🌍</div>
+        <h4>Cultural</h4>
+        <p>Cultural celebrations and diversity events in collaboration with AOs.</p>
+      </div>
+      <div class="event-type">
+        <div class="emoji">🏃</div>
+        <h4>Sport & Rec</h4>
+        <p>Recreational sports, wellness classes, and physical activity programming.</p>
+      </div>
+      <div class="event-type">
+        <div class="emoji">🤝</div>
+        <h4>Networking</h4>
+        <p>Networking mixers, orientation events, and interdepartmental connection opportunities.</p>
+      </div>
+    </div>
+
+    <div class="events-info">
+      <h3>Find Upcoming Events</h3>
+      <p>All GSS events are listed on the official GSS events page, and are also promoted through the weekly GSS newsletter and social media channels. Affiliate Organizations can also request event promotion through GSS channels.</p>
+      <a href="https://gss.ubc.ca/event-page" target="_blank">View GSS Event Calendar ↗</a>
+    </div>
+
+    <div class="events-info">
+      <h3>Venue Rental</h3>
+      <p>The GSS manages several venues at and around Thea Koerner House that graduate student organizations can book for events — including the GSS Loft, Thea's Lounge, Leon's Lounge, and the Graduate Life Centre.</p>
+      <a href="https://gss.ubc.ca/venue-rental" target="_blank">Explore Venue Options ↗</a>
+    </div>
+
+    <div class="events-info">
+      <h3>AO-Funded Events</h3>
+      <p>Each Affiliate Organization receives up to $1,000 per academic year to host social, cultural, academic, and professional development events. Events must be documented with attendance sheets, receipts, and a post-event report submitted within two weeks to receive reimbursement. Note that AO funds cannot be used to cover alcohol.</p>
+      <a href="https://gss.ubc.ca/gss-affiliated-organization/" target="_blank">AO Funding Details ↗</a>
+    </div>
+  </div>
+
+  <!-- AOs PANEL -->
+  <div class="panel" id="panel-aos">
+    <p class="section-eyebrow">Affiliate Organizations</p>
+    <h2 class="section-title">AO Program</h2>
+    <p class="section-lead">Affiliate Organizations (AOs) work with GSS to access funding, event promotion, and campus-wide collaboration, helping connect and support UBC's graduate student community.</p>
+
+    <div class="ao-intro">
+      <h3>What AOs Get</h3>
+      <p>The GSS partners with UBC department organizations, graduate communities, and select off-campus groups. As an AO, your organization gains access to GSS resources and support.</p>
+      <div class="ao-benefits">
+        <span class="ao-benefit">📢 Newsletter & social promotion</span>
+        <span class="ao-benefit">💰 Up to $1,000 event funding/year</span>
+        <span class="ao-benefit">🤝 Collaborative event opportunities</span>
+        <span class="ao-benefit">🎓 Leadership workshops</span>
+        <span class="ao-benefit">📡 Discord community access</span>
+      </div>
+    </div>
+
+    <div class="ao-steps">
+      <h3>How to Become an AO</h3>
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <p><strong>Complete the Application Form</strong> — Find the AO application form, fill it out, and email it to vpstudents@gss.ubc.ca and aa@gss.ubc.ca.</p>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <p><strong>Gather Supporting Signatures</strong> — Include four supporting signatures plus the primary contact (use an official email, not personal).</p>
+      </div>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <p><strong>Confirmation Email</strong> — Expect a reply within a week. If not, send a follow-up — emails can occasionally be missed.</p>
+      </div>
+      <div class="step-row">
+        <div class="step-num">4</div>
+        <p><strong>Attend Council Meeting</strong> — Attend the next Council meeting to address any questions. If no objections, your affiliation is approved!</p>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <p class="section-eyebrow">Current AOs</p>
+    <h2 class="section-title">Affiliated Organizations</h2>
+    <p class="section-lead">Over 50 graduate organizations across UBC are currently affiliated with the GSS, grouped by discipline.</p>
+
+    <div class="ao-category">
+      <div class="ao-category-label">🔬 Natural & Applied Sciences</div>
+      <div class="ao-list">
+        <a class="ao-item" href="https://anth.ubc.ca/graduate/opportunities/" target="_blank">Anthropology GSA <span>↗</span></a>
+        <a class="ao-item" href="https://biochem.ubc.ca/graduate/bmb-gsa/" target="_blank">Biochemistry & Molecular Biology GSA <span>↗</span></a>
+        <a class="ao-item" href="https://bgsa.botany.ubc.ca/" target="_blank">Botany Graduate Student Association <span>↗</span></a>
+        <a class="ao-item" href="https://blogs.ubc.ca/chbegsc/contact/" target="_blank">CHBE Graduate Student Council <span>↗</span></a>
+        <a class="ao-item" href="https://cegss.civil.ubc.ca/" target="_blank">Civil Engineering GSS <span>↗</span></a>
+        <a class="ao-item" href="https://www.eoas.ubc.ca/grads/graduate-student-life" target="_blank">EOAS Graduate Student Council <span>↗</span></a>
+        <a class="ao-item" href="https://gsa.ece.ubc.ca/" target="_blank">ECE Graduate Student Association <span>↗</span></a>
+        <a class="ao-item" href="https://forestry.ubc.ca/students/graduate-student-portal/forestry-graduate-student-association/" target="_blank">Forestry GSA <span>↗</span></a>
+        <a class="ao-item" href="https://mega.mech.ubc.ca/" target="_blank">Mechanical Engineering Graduate Association <span>↗</span></a>
+        <a class="ao-item" href="https://www.gsat.ubc.ca/" target="_blank">Genome Science & Technology Student Group <span>↗</span></a>
+        <a class="ao-item" href="https://exp.med.ubc.ca/exmed-gsa/" target="_blank">Experimental Medicine GSA <span>↗</span></a>
+      </div>
+    </div>
+
+    <div class="ao-category">
+      <div class="ao-category-label">🏥 Health & Medical Sciences</div>
+      <div class="ao-list">
+        <a class="ao-item" href="https://bmega.sites.olt.ubc.ca/" target="_blank">Biomedical Engineering Graduate Association <span>↗</span></a>
+        <a class="ao-item" href="https://mggsa.ca/" target="_blank">Medical Genetics GSA <span>↗</span></a>
+        <a class="ao-item" href="https://www.microbiology.ubc.ca/graduate/migss" target="_blank">Microbiology & Immunology GSS <span>↗</span></a>
+        <a class="ao-item" href="https://neuroscience.ubc.ca/connect-and-engage/neuroscience-trainee-association/" target="_blank">Neuroscience Trainee Association <span>↗</span></a>
+        <a class="ao-item" href="https://pasa.pathology.ubc.ca/" target="_blank">Pathology Student Society <span>↗</span></a>
+        <a class="ao-item" href="https://rsec.med.ubc.ca/" target="_blank">Rehabilitation Sciences Student Executive <span>↗</span></a>
+        <a class="ao-item" href="https://www.graspods.com/" target="_blank">GrasPods — BC Cancer <span>↗</span></a>
+        <a class="ao-item" href="https://hiphealth.ca/trainees/" target="_blank">Centre for Hip Health and Mobility <span>↗</span></a>
+        <a class="ao-item" href="https://www.hli.ubc.ca/trainee-association/" target="_blank">HLI Trainee Association <span>↗</span></a>
+      </div>
+    </div>
+
+    <div class="ao-category">
+      <div class="ao-category-label">🎨 Arts & Humanities</div>
+      <div class="ao-list">
+        <a class="ao-item" href="https://creativewriting.ubc.ca/graduate/opportunities/" target="_blank">Creative Writing Students Association <span>↗</span></a>
+        <a class="ao-item" href="https://blogs.ubc.ca/ggainfo/about/" target="_blank">Geography Graduate Student Association <span>↗</span></a>
+        <a class="ao-item" href="https://www.facebook.com/UBCGLSS/" target="_blank">Graduate Law Student's Society <span>↗</span></a>
+        <a class="ao-item" href="https://jwam.ubc.ca/graduate/opportunities/student-association/" target="_blank">School of Journalism Students Association <span>↗</span></a>
+        <a class="ao-item" href="https://scarp.ubc.ca/planning-students-association" target="_blank">Planning Students Association <span>↗</span></a>
+        <a class="ao-item" href="https://grsj.arts.ubc.ca/graduate/opportunities/student-association/" target="_blank">GRSJGA <span>↗</span></a>
+        <a class="ao-item" href="https://acaubc.wordpress.com/" target="_blank">Association of Canadian Archivists at UBC <span>↗</span></a>
+        <a class="ao-item" href="https://blogs.ubc.ca/asist/" target="_blank">ASIST <span>↗</span></a>
+      </div>
+    </div>
+
+    <div class="ao-category">
+      <div class="ao-category-label">💼 Business & Economics</div>
+      <div class="ao-list">
+        <a class="ao-item" href="https://www.facebook.com/ubc.econ/" target="_blank">UBC Economics GSA <span>↗</span></a>
+        <a class="ao-item" href="https://ubcsmcc.com/" target="_blank">Sauder Management Consulting Club <span>↗</span></a>
+        <a class="ao-item" href="https://www.sauder.ubc.ca/programs/masters-degrees/mban/overview/student-initiatives" target="_blank">Master of Business Analytics Student Society <span>↗</span></a>
+        <a class="ao-item" href="https://www.facebook.com/pubpoli/" target="_blank">Master of Public Policy & Global Affairs SA <span>↗</span></a>
+        <a class="ao-item" href="https://apscpp.ubc.ca/student-life/" target="_blank">MEL/MHLP Student Executive Committee <span>↗</span></a>
+        <a class="ao-item" href="https://amscampusbase.ubc.ca/roberthlee/home/" target="_blank">Robert H. Lee Graduate School <span>↗</span></a>
+      </div>
+    </div>
+
+    <div class="ao-category">
+      <div class="ao-category-label">🌱 Social & Community Wellness</div>
+      <div class="ao-list">
+        <a class="ao-item" href="https://gradwellbeing.wordpress.com/" target="_blank">Graduate Student Wellbeing Network <span>↗</span></a>
+        <a class="ao-item" href="https://igsnubc.com/" target="_blank">Interdisciplinary Graduate Student Network <span>↗</span></a>
+        <a class="ao-item" href="https://oceans.ubc.ca/graduate-program/iof-students-society/" target="_blank">Institute of Ocean & Fisheries GSS <span>↗</span></a>
+        <a class="ao-item" href="https://blogs.ubc.ca/lfsgrads/" target="_blank">Land and Food Systems GSC <span>↗</span></a>
+        <a class="ao-item" href="https://ivcf.ca/campus/connectoncampus/ubc/grad/" target="_blank">InterVarsity Graduate Student Fellowship <span>↗</span></a>
+      </div>
+    </div>
+
+    <div class="ao-category">
+      <div class="ao-category-label">🌏 Culture & Diversity</div>
+      <div class="ao-list">
+        <a class="ao-item" href="https://ubcigsa.wixsite.com/igsa" target="_blank">UBC Indian Graduate Students Association <span>↗</span></a>
+        <a class="ao-item" href="https://amscampusbase.ubc.ca/bgsn/home/" target="_blank">Black Graduate Student Network <span>↗</span></a>
+        <a class="ao-item" href="https://vancouver.housing.ubc.ca/residence-life/acadia-park-resources/get-involved-acadia-park/" target="_blank">Acadia Park Residents Association <span>↗</span></a>
+      </div>
+    </div>
+
+    <div class="ao-category">
+      <div class="ao-category-label">🔎 Research & Development</div>
+      <div class="ao-list">
+        <a class="ao-item" href="https://ubc-stat-grad.github.io/" target="_blank">Statistics GSA <span>↗</span></a>
+        <a class="ao-item" href="https://phargsubc.wixsite.com/phargsubc" target="_blank">Pharmaceutical Sciences GSS <span>↗</span></a>
+        <a class="ao-item" href="https://ubclassa.wordpress.com/" target="_blank">Library and Archival Studies SA <span>↗</span></a>
+        <a class="ao-item" href="https://experience.apsc.ubc.ca/student-groups/e-ideas" target="_blank">IDEAS — APSC <span>↗</span></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- STAFF PANEL -->
+  <div class="panel" id="panel-staff">
+    <p class="section-eyebrow">GSS Executive Team</p>
+    <h2 class="section-title">Executive Leadership</h2>
+    <p class="section-lead">The GSS is directed by an elected team of graduate students who work together to serve the interests of all graduate students at UBC.</p>
+
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="staff-avatar">HL</div>
+        <h3>Hayley Lawrence</h3>
+        <div class="staff-role">President</div>
+        <p>Tackles an ambitious set of goals to support graduate students while carefully coordinating the work of the GSS as a whole.</p>
+        <div class="staff-hours">
+          <strong>Open Office Hours</strong>
+          Fridays: 10 am – 12 pm &amp; 2 pm – 4 pm
+        </div>
+        <div class="staff-email">✉ <a href="mailto:president@gss.ubc.ca">president@gss.ubc.ca</a></div>
+      </div>
+
+      <div class="staff-card">
+        <div class="staff-avatar">GL</div>
+        <h3>Gautam Luhana</h3>
+        <div class="staff-role">VP University & Academic Affairs</div>
+        <p>Connects graduate students with the UBC Administration and the Faculty of Graduate and Postdoctoral Studies, consulting and advocating for graduate student concerns.</p>
+        <div class="staff-hours">
+          <strong>Open Office Hours</strong>
+          Tuesdays: 12:30 pm – 2:30 pm<br/>Thursdays: 11 am – 12:30 pm
+        </div>
+        <div class="staff-email">✉ <a href="mailto:vpacademic@gss.ubc.ca">vpacademic@gss.ubc.ca</a></div>
+      </div>
+
+      <div class="staff-card">
+        <div class="staff-avatar">CA</div>
+        <h3>Charles Adkins</h3>
+        <div class="staff-role">VP External Relations</div>
+        <p>Builds and maintains the grad community's connections with external bodies, making sure the graduate student voice is heard by legislators and student organizations.</p>
+        <div class="staff-hours">
+          <strong>Open Office Hours</strong>
+          Tuesdays: 11 am – 12:30 pm<br/>Thursdays: 11 am – 12:30 pm<br/>Fridays: 10 am – 1 pm
+        </div>
+        <div class="staff-email">✉ <a href="mailto:vpexternal@gss.ubc.ca">vpexternal@gss.ubc.ca</a></div>
+      </div>
+
+      <div class="staff-card">
+        <div class="staff-avatar">MT</div>
+        <h3>Mahder Teffera</h3>
+        <div class="staff-role">VP Students</div>
+        <p>Manages graduate student programs and services, including budgeting, social events, advocacy, and collaborations with partners and Affiliate Organizations.</p>
+        <div class="staff-hours">
+          <strong>Open Office Hours</strong>
+          Tuesdays: 11 am – 2 pm
+        </div>
+        <div class="staff-email">✉ <a href="mailto:vpstudents@gss.ubc.ca">vpstudents@gss.ubc.ca</a></div>
+      </div>
+
+      <div class="staff-card">
+        <div class="staff-avatar">CL</div>
+        <h3>Cesar Landin</h3>
+        <div class="staff-role">Financial Officer</div>
+        <p>Oversees the financial administration of the Society, including the annual budget, and ensures the long-term financial viability of the GSS.</p>
+        <div class="staff-hours">
+          <strong>Open Office Hours</strong>
+          Wednesdays: 11 am – 12:30 pm<br/>Thursdays: 12:30 pm – 2 pm
+        </div>
+        <div class="staff-email">✉ <a href="mailto:financial@gss.ubc.ca">financial@gss.ubc.ca</a></div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <p class="section-eyebrow">GSS Council</p>
+    <h2 class="section-title">Council</h2>
+    <p class="section-lead">The GSS Council is the primary governing body of the GSS, made up of elected departmental graduate student representatives together with the GSS Executive and graduate student senators.</p>
+
+    <div class="events-info">
+      <h3>Monthly Council Meetings</h3>
+      <p>Council meets on the third Thursday of every month in the Michael Kingsmill Forum (Room 4301) in the AMS Student Nest, from 5:30 – 7:30 pm. All meetings are open to graduate students and honorary members of the GSS to attend.</p>
+      <a href="https://gss.ubc.ca/council/" target="_blank">Learn About Council ↗</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>Information sourced from <a href="https://gss.ubc.ca" target="_blank">gss.ubc.ca</a> · Graduate Student Society of UBC Vancouver</p>
+</footer>
+
+<script>
+  function showTab(name, btn) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('panel-' + name).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
